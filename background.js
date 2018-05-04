@@ -59,10 +59,10 @@ function resHandler(response) {
 
     // create response headers if necessary
     for(let name of [
-         'access-control-allow-origin'
-        ,'access-control-allow-methods'
-        ,'access-control-allow-headers'
-        ,'access-control-allow-credentials'
+         'access-control-allow-origin',
+         'access-control-allow-methods',
+         'access-control-allow-headers',
+         'access-control-allow-credentials'
     ]) {
         // header exists, skip
         if(transaction.responseHeaders[name]) {
@@ -71,8 +71,8 @@ function resHandler(response) {
 
         // create header
         let header = {
-             name  : name
-            ,value : "null"
+             name  : name,
+             value : "null"
         };
 
         // update response
@@ -115,8 +115,8 @@ function resHandler(response) {
 
     // apply modifications
     return {
-        responseHeaders: transaction.response.responseHeaders
-        ,statusCode : 777
+        responseHeaders: transaction.response.responseHeaders,
+        statusCode : 777
     };
 }
 
