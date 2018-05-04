@@ -1,0 +1,31 @@
+{
+
+  "manifest_version": 2,
+  "name": "Crap Factory",
+  "version": "1.0",
+
+  "description": "Makes random requests to popular sites to confuse tracking methods.",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "permissions" : [
+       "webRequest"
+      ,"webRequestBlocking"
+      ,"storage"
+      ,"<all_urls>"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/"],
+      "js": ["crapfactory.js"]
+    }
+  ]
+
+}
