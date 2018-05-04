@@ -1,0 +1,43 @@
+{
+    "manifest_version" : 2
+
+    ,"name"        : "Crapfactory"
+    ,"version"     : "1.0.0"
+    ,"author"      : "daed"
+    ,"description" : "Murk up advertising companies with random requests."
+
+    ,"permissions" : [
+         "webRequest"
+        ,"webRequestBlocking"
+        ,"storage"
+        ,"<all_urls>"
+    ]
+
+    ,"background" : {
+        "scripts" : ["background.js"]
+    }
+
+    ,"browser_action" : {
+         "default_title" : "Crapfactory"
+        ,"default_icon"  : {
+            "48" : "icons/border-48.png"
+        }
+    }
+
+    ,"options_ui" : {
+         "page"          : "options.html"
+        ,"browser_style" : true
+    }
+
+    ,"applications": {
+        "gecko": {
+            "id": "crapfactory@daed"
+        }
+    },
+    "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["crapfactory.js"]
+    }
+  ]
+}
